@@ -1,0 +1,23 @@
+Option Explicit
+
+Sub OdwolywanieDoKomorek()
+'Range("a1").Value = 1
+'Range("c2").Select
+'Selection.Value = 2
+
+'Range("A1:C2").Value = 3
+
+'Range("A1:C2, A4:C4, b6").Select
+'Selection.Value = 3
+
+'Range("a1:c2", "A4:C4").Select
+
+'Range("d8", "g20").Select
+'Selection.Value = 4
+
+'Range("b3").CurrentRegion.Select
+
+Range("4:15").Select
+
+
+End Sub
