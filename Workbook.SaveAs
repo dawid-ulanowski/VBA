@@ -1,0 +1,48 @@
+Option Explicit
+
+Sub TworzeniePlikow()
+Dim path As String
+
+path = ActiveWorkbook.path
+
+
+Application.SheetsInNewWorkbook = 4
+Workbooks.Add path & "\testowy"
+Application.SheetsInNewWorkbook = 1
+End Sub
+
+Sub ZamykaniePliku()
+
+Dim wbk1 As Workbook
+
+Set wbk1 = Workbooks.Add
+
+wbk1.Close 0
+
+Application.DisplayAlerts = False
+Workbooks.Close
+Application.DisplayAlerts = True
+End Sub
+
+Sub ZapisywaniePlikow()
+Dim wbk1 As Workbook, wbk2 As Workbook, wbk3 As Workbook
+Dim path As String
+
+path = ActiveWorkbook.path
+
+Set wbk1 = Workbooks.Add
+Set wbk2 = Workbooks.Add
+Set wbk3 = Workbooks.Add
+
+wbk1.SaveAs path & "\raport1.xlsm", xlOpenXMLWorkbookMacroEnabled
+wbk2.SaveAs path & "\raport2.xlsm", xlOpenXMLWorkbookMacroEnabled
+wbk3.SaveAs path & "\raport3.xlsm", xlOpenXMLWorkbookMacroEnabled
+
+wbk1.Worksheets(1).Range("a1").Value = 5
+wbk2.Worksheets(1).Range("b1").Value = 10
+wbk3.Worksheets(1).Range("c1").Value = 15
+
+wbk1.Save
+wbk2.Close 1
+wbk3.Close 0
+End Sub
