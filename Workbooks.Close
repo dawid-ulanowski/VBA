@@ -1,0 +1,26 @@
+Option Explicit
+
+Sub TworzeniePlikow()
+Dim path As String
+
+path = ActiveWorkbook.path
+
+
+Application.SheetsInNewWorkbook = 4
+Workbooks.Add path & "\testowy"
+Application.SheetsInNewWorkbook = 1
+End Sub
+
+Sub ZamykaniePliku()
+
+Dim wbk1 As Workbook
+
+Set wbk1 = Workbooks.Add
+
+wbk1.Close 0
+
+Application.DisplayAlerts = False
+Workbooks.Close
+Application.DisplayAlerts = True
+End Sub
+
