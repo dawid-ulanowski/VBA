@@ -1,0 +1,20 @@
+Option Explicit
+
+Sub DodawanieArkuszy()
+'Worksheets.Add after:=Worksheets(Worksheets.Count)
+Worksheets.Add before:=Worksheets(Worksheets.Count)
+
+End Sub
+
+Sub UsuwanieArkuszy()
+Application.DisplayAlerts = False
+
+Worksheets(7).Delete
+Worksheets(6).Delete
+Worksheets(5).Delete
+Worksheets(4).Delete
+Worksheets(3).Delete
+Worksheets(2).Delete
+Application.DisplayAlerts = True
+'1 -> 2
+End Sub
