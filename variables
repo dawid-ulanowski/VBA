@@ -1,0 +1,20 @@
+Option Explicit
+
+Sub zmienne()
+'Dim Zmienna1 As Integer
+'Dim Zmienna2 As Integer
+'Dim Zmienna3 As Integer
+
+Dim Zmienna1 As Integer, zmienna2 As Integer, zmienna3 As Integer
+
+Zmienna1 = 10
+
+zmienna2 = 100
+
+Debug.Print Zmienna1
+Range("a1").Value = Zmienna1
+Zmienna1 = 20
+Range("a2").Value = Zmienna1
+
+Range("a3").Value = zmienna2
+End Sub
