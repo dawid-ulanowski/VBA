@@ -1,0 +1,21 @@
+Option Explicit
+
+Sub aplikacja()
+Debug.Print Application.Name
+Debug.Print Application.Path
+Debug.Print Application.Version
+
+Application.EnableEvents = False
+
+'Application.DisplayAlerts = False
+'Worksheets(2).Delete
+'Application.DisplayAlerts = True
+
+Application.Calculation = xlCalculationManual
+Application.Calculate
+Application.Calculation = xlCalculationAutomatic
+
+
+Application.EnableEvents = True
+
+End Sub
