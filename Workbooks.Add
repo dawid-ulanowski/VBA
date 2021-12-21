@@ -1,0 +1,12 @@
+Option Explicit
+
+Sub TworzeniePlikow()
+Dim path As String
+
+path = ActiveWorkbook.path
+
+
+Application.SheetsInNewWorkbook = 4
+Workbooks.Add path & "\testowy"
+Application.SheetsInNewWorkbook = 1
+End Sub
