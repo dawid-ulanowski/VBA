@@ -1,0 +1,18 @@
+Option Explicit
+
+Dim zmienna1 As Long
+
+Sub procedura1()
+zmienna1 = 100
+Debug.Print zmienna1
+End Sub
+
+Sub procedura2()
+zmienna1 = 200
+Debug.Print zmienna1
+End Sub
+
+Sub procedura3()
+zmienna2 = 300
+Debug.Print zmienna2
+End Sub
