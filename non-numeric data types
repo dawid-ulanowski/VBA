@@ -1,0 +1,49 @@
+Option Explicit
+
+Sub zmienna_testy()
+Dim zmienna1 As String
+Dim zmienna2 As String * 5
+
+zmienna1 = "Ala ma kota"
+zmienna2 = "Ala ma kota"
+
+Debug.Print zmienna1
+Debug.Print zmienna2
+
+End Sub
+
+Sub zmienna_testy_boolean()
+Dim zmienna3 As Boolean
+zmienna3 = False
+
+Debug.Print zmienna3
+
+End Sub
+
+Sub zmienna_testy_daty()
+Dim data1 As Date
+
+data1 = #1/30/2020#
+Debug.Print data1
+
+data1 = #1/30/2020#
+Debug.Print data1
+
+data1 = #3:30:15 PM#
+Debug.Print data1
+
+End Sub
+
+Sub zmienna_testy_variant()
+Dim zmienna4 As Variant
+
+zmienna4 = "kot"
+Debug.Print zmienna4
+
+zmienna4 = 120000
+Debug.Print zmienna4
+
+zmienna4 = #1/30/2020#
+Debug.Print zmienna4
+
+End Sub
