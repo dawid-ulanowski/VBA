@@ -1,0 +1,15 @@
+Option Explicit
+
+Sub zmienne_testy()
+Dim zmienna1 As Long
+Dim zmienna2 As Integer
+Dim zmienna3 As Double
+
+zmienna1 = -35000
+zmienna2 = 3
+
+Debug.Print zmienna1 / zmienna2
+zmienna3 = zmienna1 / zmienna2
+Debug.Print zmienna3
+
+End Sub
