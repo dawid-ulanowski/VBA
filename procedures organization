@@ -1,0 +1,43 @@
+Option Explicit
+
+Sub spistresci()
+
+Call program1
+Call program2
+Call program3
+
+End Sub
+
+Private Sub program1()
+Debug.Print 1
+End Sub
+
+Private Sub program2()
+Debug.Print 2
+End Sub
+
+Private Sub program3()
+Debug.Print 3
+End Sub
+
+
+
+
+
+Sub spistresci2()
+Dim zmienna1 As Long
+zmienna1 = 100
+
+prog1 (zmienna1)
+prog2 (zmienna1)
+End Sub
+
+Sub prog1(zm1 As Long)
+Debug.Print zm1
+
+End Sub
+
+Sub prog2(zm1 As Long)
+zm1 = 200
+Debug.Print zm1
+End Sub
