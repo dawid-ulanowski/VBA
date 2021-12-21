@@ -1,0 +1,21 @@
+Option Explicit
+
+Sub stale()
+
+Debug.Print 155 * cKMdoMil
+
+End Sub
+
+Sub ilezaplacevat()
+
+Debug.Print 15500 * cVAT
+End Sub
+
+
+
+
+Option Explicit
+
+Public Const cVAT As Double = 0.23
+Public Const cKMdoMil As Double = 0.6215
+Public Const cMildoKM As Double = 1.609
