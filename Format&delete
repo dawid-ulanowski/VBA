@@ -1,0 +1,20 @@
+Sub format()
+
+
+Range("a1").Font.Underline = True
+Range("d1").Select
+Selection.Font.Name = "Arial"
+Selection.Font.Size = 7
+Selection.Font.Color = vbRed
+
+Selection.Interior.Color = vbBlue
+
+End Sub
+
+Sub usuwanie()
+
+
+Range("d1").ClearFormats
+
+
+End Sub
