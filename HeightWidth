@@ -1,0 +1,15 @@
+Sub wysokosciszerokosc()
+
+Range("a:a").EntireColumn.ColumnWidth = 10.5
+Range("1:1").EntireRow.RowHeight = 32
+
+Columns("A:B").ColumnWidth = 17
+Rows("3:7").RowHeight = 45
+
+
+Columns("a:b").AutoFit
+Rows("1:10").AutoFit
+
+
+
+End Sub
