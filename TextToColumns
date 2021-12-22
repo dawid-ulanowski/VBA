@@ -1,0 +1,7 @@
+Sub texttocolumn()
+
+
+Range("d1:d8").TextToColumns Destination:=Range("e1"), comma:=True
+
+
+End Sub
