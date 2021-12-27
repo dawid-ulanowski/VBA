@@ -1,0 +1,200 @@
+Option Explicit
+
+Sub logika()
+
+
+Dim jeden As Long
+Dim dwa As Long
+
+jeden = Range("a1").Value
+dwa = Range("b1").Value
+
+If jeden = 1 Then
+    Range("a1").Font.Bold = True
+ElseIf jeden = 2 Then
+    Range("a1").Font.Italic = True
+Else: Range("a1").Font.Underline = xlUnderlineStyleSingle
+End If
+
+
+End Sub
+
+
+
+Sub nieilub()
+
+
+Dim jeden As Long
+Dim dwa As Long
+
+jeden = Range("a1").Value
+dwa = Range("b1").Value
+
+
+If jeden = 1 And dwa = 2 Then
+    Range("c3").Value = "prawda"
+Else: Range("c3").Value = "fałsz"
+
+End If
+
+Range("c3").Font.Bold = Not Range("c3").Font.Bold
+
+
+
+End Sub
+
+
+Sub wiecejwarunkow()
+
+Dim wartosc As Long
+wartosc = Range("c10").Value
+
+Select Case wartosc
+    Case 5
+        MsgBox "Twoja wartosc to 5"
+    Case 10
+        MsgBox "Twoja wartosc to 10"
+    Case 15
+        MsgBox "Twoja wartosc to 15"
+    Case Else
+        MsgBox "Wartosc rozna"
+        
+End Select
+
+
+End Sub
+
+
+
+Sub ocena()
+
+Dim wartosc As Long
+
+wartosc = Range("c10").Value
+
+Select Case wartosc
+    Case Is <= 30
+        MsgBox "Słabo, jesteś cieniasem"
+    Case Is <= 70
+        MsgBox "Nie tak źle, stać Cię na więcej"
+    Case Is <= 100
+        MsgBox "Bardzo dobrze! Tak trzymać!"
+
+End Select
+
+
+End Sub
+
+
+
+
+Sub funkcje1()
+
+
+Print IsNumeric(Range("a1"))
+
+
+End Sub
+
+
+
+Sub dates()
+
+
+'Debug.Print Date
+'Debug.Print Now
+'Debug.Print Time
+
+Debug.Print Year(Range("a1"))
+Debug.Print Month(Now)
+Debug.Print Day(Now)
+Debug.Print Hour(Time)
+
+Debug.Print MonthName(3)
+Debug.Print Weekday(Now, vbMonday)
+Debug.Print WeekdayName(Weekday(Now, vbMonday))
+
+End Sub
+
+
+Sub text()
+
+Dim text As String
+
+text = Range("a2").value
+Debug.Print Left(text, 1)
+
+'Debug.Print Right(text, 1)
+'Debug.Print Mid(text, 2, 1)
+'Debug.Print UCase(text)
+'Debug.Print Len(text)
+
+
+'Debug.Print Trim(text)
+'
+'Debug.Print Replace(text, "a", "c")
+'Debug.Print Trim(Replace(text, "a", "c"))
+
+Debug.Print InStr(text, "b")
+
+
+End Sub
+
+
+
+Sub worksheetfunction()
+
+Dim produkt As Range
+Dim cena As Range
+Dim wynik As Double
+
+Set produkt = Range("c2:c9")
+Set cena = Range("d2:d9")
+
+wynik = Application.worksheetfunction.SumIf(produkt, ActiveCell.value, cena)
+ActiveCell.Offset(0, 1).value = wynik
+
+
+End Sub
+
+
+
+Function KMtoMPH(km As Double) As Double
+
+KMtoMPH = km / 1.609
+
+
+
+End Function
+
+
+
+Function profits(product1 As Long, product2 As Long, product3 As Long) As Double
+
+
+profits = product1 * 50 + product2 * 70 + product3 * 100
+
+
+End Function
+
+
+Sub profit()
+
+
+Dim value As Long
+
+value = profits(12, 23, 21)
+
+Range("c12").value = value
+
+
+
+End Sub
+
+
+
+
+
+
+
+
