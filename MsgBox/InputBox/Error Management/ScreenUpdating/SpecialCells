@@ -1,0 +1,210 @@
+Option Explicit
+
+Sub box()
+
+
+Dim odp As Integer
+
+odp = MsgBox("This is your first Message Box", vbInformation + vbYesNoCancel + vbDefaultButton2, "Warning!")
+
+Debug.Print odp
+
+If odp = vbYes Then
+    Range("a1").Font.Bold = Not Range("a1").Font.Bold
+
+End If
+
+End Sub
+
+
+
+
+Sub inputboxy()
+
+Dim wsh As Worksheet
+Dim name As String
+
+name = inputbox("Insert worksheet name", "New Worksheet", "Arkusz999")
+Debug.Print TypeName(name)
+
+name = name + 2
+
+
+Range("a2").Value = name
+
+
+'Set wsh = Worksheets.Add
+'
+'wsh.name = name
+
+
+
+
+
+
+End Sub
+
+
+
+
+Sub inputboxy2()
+
+Dim name As Range
+
+Set name = Application.inputbox(Prompt:="test", Title:="Testing window", Type:=8)
+
+name.Interior.Color = vbYellow
+
+End Sub
+
+
+Option Explicit
+
+Sub errors()
+
+Dim i As Long
+
+i = 1
+
+Select Case i
+    Case 1
+        MsgBox "Działa"
+    
+End Select
+
+
+End Sub
+
+
+Sub error2()
+
+Dim i As String
+
+i = InputBox("Insert value")
+On Error GoTo problem1
+
+i = i + 2
+ 
+Debug.Print i
+
+Debug.Print 100
+
+Exit Sub
+
+
+problem1:
+    MsgBox "Incorrect type of message"
+
+
+
+End Sub
+
+
+Sub error3()
+
+Dim i As Long
+
+i = 100
+
+On Error Resume Next
+
+Range("a1").Value = i / 100
+Range("a2").Value = i / 0
+Range("a3").Value = i / "janek"
+Range("a4").Value = i / 50
+
+
+On Error GoTo 0
+
+
+End Sub
+
+Option Explicit
+
+Sub test()
+
+Dim wbk As Workbook
+
+Set wbk = Workbooks.Add
+
+Application.Wait Now + #12:00:02 AM#
+
+wbk.Close 0
+
+End Sub
+
+
+Sub test1()
+
+Dim wbk As Workbook
+
+Application.ScreenUpdating = False
+
+Set wbk = Workbooks.Add
+
+Application.Wait Now + #12:00:02 AM#
+
+wbk.Close 0
+
+
+
+Application.ScreenUpdating = True
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
