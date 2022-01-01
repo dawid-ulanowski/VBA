@@ -1,0 +1,257 @@
+Option Explicit
+
+Sub petlafornext()
+
+Dim i As Long
+
+'For i = 0 To 9
+'    Range("a1").Offset(0 + i, 0).Value = i + 1
+'Next i
+
+'
+'For i = 1 To 10
+'    Cells(i, 1).Value = i
+'Next i
+End Sub
+
+
+Sub petlafornextsumowanie()
+
+
+Dim i As Long
+
+Dim sum As Long
+
+
+For i = 1 To 10
+    sum = sum + i
+Next i
+
+
+Range("c10").Value = sum
+
+
+End Sub
+
+
+Sub PetlaForNextStep()
+
+Dim i As Long
+
+For i = 2 To 10 Step 2
+    Cells(i, 1).Value = i - (i / 2)
+Next i
+
+
+
+
+
+End Sub
+
+
+Sub PetlaForNextStep2()
+
+Dim i As Long
+
+For i = 10 To 2 Step -2
+    Cells(i, 1).Value = 10 - i + 1
+Next i
+
+
+
+End Sub
+
+Sub UsuwanieWierszy()
+
+Dim i As Long
+Dim Lrow As Long
+
+Lrow = 15
+
+For i = 1 To Lrow
+    If Cells(i, 1).Value = "x" Then
+        Cells(i, 1).EntireRow.Delete
+    End If
+Next i
+
+     
+
+
+
+
+End Sub
+
+
+
+Sub UsuwanieWierszyPrawidlowe()
+
+Dim i As Long
+Dim Lrow As Long
+
+Lrow = Cells(Rows.Count, 1).End(xlUp).Row
+
+For i = Lrow To 1 Step -1
+    If Cells(i, 1).Value = "x" Then
+        Cells(i, 1).EntireRow.Delete
+    End If
+Next i
+
+     
+
+End Sub
+
+
+
+Sub WithEndWith()
+
+Range("a1:a11").Select
+
+'Selection.Font.Color = vbGreen
+'Selection.Font.Size = 10
+'Selection.Font.Bold = True
+'Selection.Font.Name = "Arial"
+
+
+With Selection.Font
+    .Color = vbGreen
+    .Size = 10
+    .Bold = True
+    .Name = "Arial"
+End With
+
+
+End Sub
+
+
+Sub ForEachNext()
+
+Dim rng As Range
+Dim cell As Range
+
+Set rng = Range("a1:b11")
+
+For Each cell In rng
+    cell.Font.Bold = True
+Next cell
+
+End Sub
+
+
+Sub OtwartePliki()
+
+Dim wbk As Workbook
+
+For Each wbk In Workbooks
+    Debug.Print wbk.Name
+Next wbk
+
+
+
+End Sub
+
+
+Sub OtwarteArkusze()
+
+Dim wsh As Worksheet
+
+For Each wsh In Worksheets
+    Debug.Print wsh.Name
+Next wsh
+
+
+End Sub
+
+
+
+
+Sub OutOfLoop()
+
+Dim rng As Range
+Dim cell As Range
+
+Set rng = Range("a1").CurrentRegion
+
+For Each cell In rng
+    cell.Font.Underline = xlUnderlineStyleSingle
+    If cell = "x" Then
+        cell.Font.Bold = True
+        Exit For
+    End If
+
+Next cell
+
+
+
+End Sub
+
+
+Sub OutOfLoop2()
+
+Dim i As Long
+
+For i = 1 To 11
+    Cells(i, 1).Font.Underline = xlUnderlineStyleSingle
+    If Cells(i, 1).Value = "x" Then
+        Cells(i, 1).Font.Bold = True
+        Exit For
+    End If
+
+Next i
+
+Debug.Print i
+
+
+
+
+
+End Sub
+
+
+
+Sub DoWhileUntil()
+
+Dim iRow As Long
+Dim iCol As Long
+Dim i As Long
+
+i = 1
+
+'Do While (i <= 10)
+'    Cells(i, 1).Value = i
+'    i = i + 1
+'Loop
+
+Do Until (10 <= i)
+    Cells(i, 1).Value = i
+    i = i + 1
+Loop
+
+
+
+
+End Sub
+
+
+
+Sub TabliczkaMnozenia()
+
+Dim iRow As Long
+Dim iCol As Long
+Dim i As Long
+
+
+iRow = 1
+iCol = 1
+
+Do While (iRow <= 10)
+    iCol = 1
+    Do While (iCol <= 10)
+        Cells(iRow, iCol) = iRow * iCol
+        iCol = iCol + 1
+    Loop
+    iRow = iRow + 1
+Loop
+
+
+
+End Sub
