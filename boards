@@ -1,0 +1,97 @@
+Option Explicit
+
+Sub tablice()
+
+Dim tablica(2) As String
+
+tablica(0) = "rano"
+tablica(1) = "południe"
+tablica(2) = "wieczór"
+
+Debug.Print tablica(0)
+Debug.Print tablica(1)
+Debug.Print tablica(2)
+
+
+End Sub
+
+
+Sub MultiDimBoard()
+
+Dim Arr(2, 2) As Long
+
+Arr(0, 0) = 1
+Arr(0, 1) = 2
+Arr(0, 2) = 3
+
+Arr(1, 0) = 4
+Arr(1, 1) = 5
+Arr(1, 2) = 6
+
+Arr(2, 0) = 7
+Arr(2, 1) = 8
+Arr(2, 2) = 9
+
+
+Range("b2:d4").Value = Arr
+
+
+End Sub
+
+Sub BoardAndLoop()
+
+Dim Arr(1 To 4) As Long
+Dim i As Long
+
+For i = LBound(Arr) To UBound(Arr)
+    Arr(i) = Len(Cells(i, 1).Value)
+    Cells(i, 2).Value = Arr(i)
+Next i
+
+Debug.Print LBound(Arr)
+
+
+End Sub
+
+
+
+Sub FlexibleBoard()
+
+Dim Arr() As Long
+Dim Lrow As Long
+Dim i As Long
+
+
+Lrow = Cells(Rows.Count, 1).End(xlUp).Row
+
+ReDim Arr(Lrow - 1)
+
+For i = LBound(Arr) To UBound(Arr)
+    Arr(i) = Len(Cells(i + 1, 1).Value)
+    Cells(i + 1, 2).Value = Arr(i)
+Next i
+
+
+
+End Sub
+
+
+
+
+Sub UzupelnianieTablic()
+
+Dim Arr() As Variant
+
+'Arr() = Range("a1").CurrentRegion.Value
+'
+'Range("a10:b15").Value = Arr
+
+
+
+Arr = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+Erase Arr
+
+
+
+End Sub
